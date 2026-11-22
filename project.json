@@ -1,0 +1,108 @@
+{
+	"contentrating": "Everyone",
+	"description": "A full-screen ambient Now Playing wallpaper powered by ListenBrainz. Paste your ListenBrainz user token (listenbrainz.org/settings) into the wallpaper's settings and it shows what you're playing: the cover, title and artist, with a soft glow taken from the cover's colours. Updates live (no polling) and works with any player that sends 'playing now' to ListenBrainz.",
+	"file": "index.html",
+	"general": {
+		"properties": {
+			"listenbrainztoken": {
+				"order": 10,
+				"text": "ListenBrainz user token",
+				"type": "textinput",
+				"value": ""
+			},
+			"artworksize": {
+				"order": 100,
+				"text": "Artwork size",
+				"type": "slider",
+				"min": 18,
+				"max": 40,
+				"value": 28,
+				"editable": true,
+				"fraction": false
+			},
+			"verticalposition": {
+				"order": 101,
+				"text": "Vertical position",
+				"type": "slider",
+				"min": -10,
+				"max": 10,
+				"value": 0,
+				"editable": true,
+				"fraction": false
+			},
+			"showalbum": {
+				"order": 102,
+				"text": "Show album name",
+				"type": "bool",
+				"value": true
+			},
+			"idletext": {
+				"order": 103,
+				"text": "Text when nothing is playing",
+				"type": "textinput",
+				"value": "Nothing Playing"
+			},
+			"glowintensity": {
+				"order": 110,
+				"text": "Background glow",
+				"type": "slider",
+				"min": 0,
+				"max": 100,
+				"value": 80,
+				"editable": true,
+				"fraction": false
+			},
+			"ambientmotion": {
+				"order": 111,
+				"text": "Slow glow drift",
+				"type": "bool",
+				"value": false
+			},
+			"accentmode": {
+				"order": 120,
+				"text": "Marker colour",
+				"type": "combo",
+				"value": "auto",
+				"options": [
+					{
+						"label": "From the artwork",
+						"value": "auto"
+					},
+					{
+						"label": "Custom",
+						"value": "custom"
+					}
+				]
+			},
+			"accentcolor": {
+				"order": 121,
+				"text": "Custom marker colour",
+				"type": "color",
+				"value": "0.85 0.3 0.94",
+				"condition": "accentmode.value == 'custom'"
+			},
+			"showmarkers": {
+				"order": 124,
+				"text": "Show markers",
+				"type": "bool",
+				"value": true
+			},
+			"reactivemarkers": {
+				"order": 125,
+				"text": "Markers react to audio",
+				"type": "bool",
+				"value": false,
+				"condition": "showmarkers.value == true"
+			}
+		},
+		"supportsaudioprocessing": true
+	},
+	"preview": "preview.jpg",
+	"tags": [
+		"Music",
+		"Relaxing"
+	],
+	"title": "ListenBrainz Now Playing",
+	"type": "web",
+	"visibility": "private"
+}

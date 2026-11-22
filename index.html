@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Now Playing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-idle">
+  <!-- Ambient background: colour layers are added and cross-faded by app.js -->
+  <div id="ambient" aria-hidden="true"></div>
+  <div id="vignette" aria-hidden="true"></div>
+  <div id="grain" aria-hidden="true"></div>
+
+  <main id="stage">
+    <div id="art" class="art">
+      <div class="art-placeholder"></div>
+    </div>
+
+    <div id="meta" class="meta">
+      <h1 id="title" class="title">Nothing Playing</h1>
+      <p id="artist" class="artist"></p>
+      <p id="album" class="album"></p>
+    </div>
+
+    <!-- Shown instead of the song info until a working token is entered -->
+    <div id="setup" class="setup">
+      <h1 id="setup-title" class="title">Connect ListenBrainz</h1>
+      <p id="setup-note" class="artist">This wallpaper shows what you’re playing on ListenBrainz.</p>
+      <ol class="steps">
+        <li>Open <b>listenbrainz.org/settings</b> and copy your <b>User token</b>.</li>
+        <li>In Wallpaper Engine, select this wallpaper and paste it into <b>ListenBrainz user token</b> in the settings panel on the right.</li>
+        <li>Play something with any app that sends <b>playing now</b> to ListenBrainz.</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer id="timeline" class="timeline" aria-hidden="true">
+    <div id="ticks" class="ticks"></div>
+  </footer>
+
+  <script>
+    // Browser preview only: open index.html?demo (see demo.js for the other modes).
+    // Inside Wallpaper Engine there is no query string, so this never loads there.
+    if (/[?&]demo\b/.test(location.search)) document.write('<script src="demo.js"><\/script>');
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
